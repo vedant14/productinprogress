@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'static/about'
+	get 'about-product', to: 'static#about'
   get 'static/contact'
   resources :blogs
 

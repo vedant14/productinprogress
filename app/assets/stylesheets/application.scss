@@ -113,9 +113,9 @@ h1, h2, h3, h4, h5, h6 {
 #background {
   position: absolute;
   top: 65%;
-  left: 100%;
-  min-width: 100%;
-  min-height: 100%; 
+  width: 50%;
+  left: 75%;
+  height: 100%; 
   z-index: -1;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
