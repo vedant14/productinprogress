@@ -91,6 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 .blog-post-meta {
   margin-bottom: 1.25rem;
   color: #999;
+  font-style: italic;
 }
 
 /*
@@ -112,14 +113,14 @@ h1, h2, h3, h4, h5, h6 {
 /*Custom*/
 #background {
   position: absolute;
-  top: 65%;
-  width: 50%;
-  left: 75%;
+  top: 55%;
+  width: 70%;
+  left: 65%;
   height: 100%; 
   z-index: -1;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background: image-url('bgmain.svg') no-repeat;
+  background: image-url('bgmain2.svg') no-repeat;
 }
 
 
