@@ -1,0 +1,129 @@
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+
+<%= render "blogbody" %>
+<%= render "blogsubscribe" %>
+
+<div class="border-top py-3 my-3">
+  <%= render "blogshare" %>
+</div>
+<%= render "blogauthor" %>
+
+<div class="container">
+  <div class="w-lg-75 border-top space-2 mx-lg-auto">
+    <div class="mb-5">
+      <h3 class="font-weight-medium">Related stories</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Blog Card -->
+        <article class="border-bottom h-100 py-5">
+          <div class="row justify-content-between">
+            <div class="col-6">
+              <a class="d-inline-block text-muted font-weight-medium text-uppercase small" href="#">Product</a>
+              <h4 class="h6 font-weight-medium mb-0">
+                <a href="single-article.html">InVision design forward fund</a>
+              </h4>
+            </div>
+
+            <div class="col-5">
+              <img class="img-fluid" src="../../assets/img/500x280/img18.jpg" alt="Image Description">
+            </div>
+          </div>
+        </article>
+        <!-- End Blog Card -->
+      </div>
+
+      <div class="col-md-6">
+        <!-- Blog Card -->
+        <article class="border-bottom h-100 py-5">
+          <div class="row justify-content-between">
+            <div class="col-6">
+              <a class="d-inline-block text-muted font-weight-medium text-uppercase small" href="#">Business</a>
+              <h4 class="h6 font-weight-medium mb-0">
+                <a href="single-article.html">What CFR really is about</a>
+              </h4>
+            </div>
+
+            <div class="col-5">
+              <img class="img-fluid" src="../../assets/img/500x280/img13.jpg" alt="Image Description">
+            </div>
+          </div>
+        </article>
+        <!-- End Blog Card -->
+      </div>
+
+      <div class="col-md-6">
+        <!-- Blog Card -->
+        <article class="border-bottom h-100 py-5">
+          <div class="row justify-content-between">
+            <div class="col-6">
+              <a class="d-inline-block text-muted font-weight-medium text-uppercase small" href="#">Front academy</a>
+              <h4 class="h6 font-weight-medium mb-0">
+                <a href="single-article.html">What is KYC and why do we need it</a>
+              </h4>
+            </div>
+
+            <div class="col-5">
+              <img class="img-fluid" src="../../assets/img/500x280/img24.jpg" alt="Image Description">
+            </div>
+          </div>
+        </article>
+        <!-- End Blog Card -->
+      </div>
+
+      <div class="col-md-6">
+        <!-- Blog Card -->
+        <article class="border-bottom h-100 py-5">
+          <div class="row justify-content-between">
+            <div class="col-6">
+              <a class="d-inline-block text-muted font-weight-medium text-uppercase small" href="#">Business</a>
+              <h4 class="h6 font-weight-medium mb-0">
+                <a href="single-article.html">Enjoy $1,000 worth of perks with Front for Business</a>
+              </h4>
+            </div>
+
+            <div class="col-5">
+              <img class="img-fluid" src="../../assets/img/500x280/img19.jpg" alt="Image Description">
+            </div>
+          </div>
+        </article>
+        <!-- End Blog Card -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Blog Card Section -->
+
+<!-- Subscribe Section -->
+<div class="space-top-2 space-bottom-1">
+  <div class="bg-img-hero" style="background-image: url(../../assets/img/bg-shapes/bg5.png);">
+    <div class="container space-2 space-bottom-lg-3">
+      <!-- Title -->
+      <div class="w-md-60 text-center mx-auto mb-7">
+        <h2 class="font-weight-semi-bold">Stay in the know</h2>
+        <p>Get special offers on the latest developments from Front.</p>
+      </div>
+      <!-- End Title -->
+
+      <!-- Form -->
+      <form class="js-validate w-md-75 w-lg-50 mx-md-auto">
+        <div class="js-form-message">
+          <div class="d-flex align-items-center">
+            <label class="sr-only" for="subscribeSr">Subscribe</label>
+            <div class="input-group">
+              <input type="email" class="form-control" name="email" id="subscribeSr" placeholder="Your email" aria-label="Your email" required
+                     data-msg="Please enter a valid email address."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+            <button type="submit" class="btn btn-primary btn-wide transition-3d-hover ml-3">Get Started</button>
+          </div>
+        </div>
+      </form>
+      <!-- End Form -->
+    </div>
+  </div>
+</div>

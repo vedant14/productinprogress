@@ -1,0 +1,18 @@
+<div class="container my-5">
+	<h1 class="text-center"><%= @post.title %> </h1>
+</div>
+<div class="border-bottom pb-2 mb-2">
+  	<div class="row align-items-md-center">
+	    <div class="col-md-7 mb-5 mb-md-0">
+		    <span class="d-block text-muted font-italic"> 
+		    	Published on: <%= @post.created_at.strftime("%d/%m/%Y")%> 
+			</span>
+	     </div>
+		<div class="col-md-5">
+		    <%= render "blogshare" %>
+		</div>
+	</div>
+</div>
+<div class="my-5 ">
+	<p> <%= @post.body %> </p>
+</div>

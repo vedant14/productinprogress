@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
   def home
-    @blogs = Blog.all
+    @blogs = Post.all
   end
 
   def about

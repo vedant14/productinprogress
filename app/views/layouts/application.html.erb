@@ -6,17 +6,20 @@
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" type="text/css" href="trix.css">
-    <script type="text/javascript" src="trix.js"></script>
+    <script type="text/javascript" src="trix.js"></script> 
+
+    <meta charset="utf-8">
 
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
   <body>
+    <%= render "shared/header" %>
     <div class="container">
-      <%= render "shared/header" %>
       <%= render "shared/navbar" %>
       <%= yield %>
       <%= render "shared/footer" %>

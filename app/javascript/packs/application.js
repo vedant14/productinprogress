@@ -12,7 +12,6 @@ import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
 import "bootstrap"
-import "../stylesheets/application"
 
 
 
@@ -25,3 +24,4 @@ import "../stylesheets/application"
 
 require("trix")
 require("@rails/actiontext")
+import "controllers"
