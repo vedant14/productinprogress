@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_05_090539) do
+ActiveRecord::Schema.define(version: 2020_01_13_164048) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 2020_01_05_090539) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "topic_id"
+    t.index ["topic_id"], name: "index_posts_on_topic_id"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +71,5 @@ ActiveRecord::Schema.define(version: 2020_01_05_090539) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "posts", "topics"
 end

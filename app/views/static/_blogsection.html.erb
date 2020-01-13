@@ -4,11 +4,11 @@
       <h3 class="pb-4 mb-4 font-italic border-bottom">
         Recent Posts  
       </h3>
-      <% @blogs.each do |blog| %>
+      <% @posts.each do |post| %>
       <div class="blog-post">
-        <h2 class="blog-post-title"> <%= blog.title %></h2> 
-        <p class="blog-post-meta"> Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago </p>
-        <p> <%= truncate(strip_tags(blog.body.to_s), length: 200, separator: ' ') %> <%= link_to "continue reading", blog%> </p>
+        <p class="blog-post-title"> <%= post.title %></p> 
+        <p class="blog-post-meta"> Published <%= distance_of_time_in_words(post.updated_at , Time.now) %> ago </p>
+        <p> <%= truncate(strip_tags(post.body.to_s), length: 200, separator: ' ') %> <%= link_to "continue reading", post%> </p>
       </div>
       <% end %>
       <nav class="blog-pagination">

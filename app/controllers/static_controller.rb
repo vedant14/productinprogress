@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
   def home
-    @blogs = Post.all
+    @posts = Post.published_by_order.limit(3)
   end
 
   def about
