@@ -1,9 +1,13 @@
 <main role="main" class="container">
   <div class="row">
-    <div class="col-md-8 blog-main">
-      <h3 class="pb-4 mb-4 font-italic border-bottom">
-        Recent Posts  
-      </h3>
+    <div class="col-md-10 blog-main">
+      <div class="pb-4 mb-4 font-italic border-bottom">
+        <span class="h3"> Recent Posts </span>
+        <%= link_to posts_path do %> 
+            Read all the articles <%= image_tag("/assets/next.svg") %> 
+        <% end %>  
+      </div>
+
       <% @posts.each do |post| %>
       <div class="blog-post">
         <p class="blog-post-title"> <%= post.title %></p> 
@@ -12,12 +16,12 @@
       </div>
       <% end %>
       <nav class="blog-pagination">
-        <a class="btn btn-outline-primary" href="#">Older</a>
-        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-      </nav>
-
+        <%= link_to posts_path do %> 
+          <div class="btn btn-outline-secondary">            
+            Read all the articles <%= image_tag("/assets/next.svg") %> 
+          </div>
+        <% end %>
     </div>    
     <%= render "blogsidebar" %>
   </div>
-
 </main>

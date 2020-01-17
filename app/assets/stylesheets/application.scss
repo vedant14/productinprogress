@@ -13,7 +13,9 @@
 }
 
 .blog-sidebar {
-    padding-top: 50px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10%;
 }
 
 .blog-header-logo {
@@ -90,13 +92,11 @@ a {
 .blog-pagination {
   margin-bottom: 4rem;
 }
+
 .blog-pagination > .btn {
   border-radius: 2rem;
 }
 
-/*
- * Blog posts
- */
 .u-lg-avatar {
   width: 60%;
   height: 60%;
@@ -104,26 +104,32 @@ a {
   margin-left: 30%;
 }
 
-
 .blog-post {
   margin-bottom: 4rem;
 }
+
 .blog-post-title {
   margin-bottom: .25rem;
   font-size: 2rem;
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  background: linear-gradient(180deg,rgba(255,255,255,0) 55%, #FFFC37 50%);
+  background: linear-gradient(180deg,rgba(255,255,255,0) 65%, #FFFC37 50%);
   display: inline;
 }
+
+.blog-index-title {
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  background: linear-gradient(180deg,rgba(255,255,255,0) 70%, #FFFC37 50%);
+  display: inline;
+}
+
 .blog-post-meta {
   margin-bottom: 1.25rem;
   color: #999;
   font-style: italic;
 }
 
-/*
- * Footer
- */
 .blog-footer {
   padding: 2.5rem 0;
   margin-top: 3rem;
@@ -136,9 +142,6 @@ a {
   margin-bottom: 0;
 }
 
-
-
-/*Custom*/
 #background {
   position: absolute;
   top: 55%;
@@ -151,14 +154,11 @@ a {
   background: image-url('bgmain2.svg') no-repeat;
 }
 
-
-/*margin and background for header section*/
 .header {
   background-color: rgba(201, 76, 76, 0);
   margin-top: 50px;
   margin-bottom: 60px;
 }
-
 
 .topic_badge a {
   font-size: 1.1rem;
@@ -176,10 +176,34 @@ a {
 
 }
 
-
 .card-footer {
+  font-size: 1.2rem;
   padding: 1rem 1rem;
   background-color: #fff;
   border-top: 1px solid #e7eaf3;
+}
+
+.shadow-soft {
+  box-shadow: 0 3px 6px 0 rgba(140, 152, 164, 0.25) !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+
+.w-100 {
+  width: 100% !important;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+.max-width-15 {
+  max-width: 7rem;
 }
 

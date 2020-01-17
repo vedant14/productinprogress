@@ -5,10 +5,13 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @posts = Post.published_by_order
+    @topics = Topic.all
   end
 
   # GET /posts/1
   def show
+    @topics = Topic.all
+
   end
 
   # GET /posts/new
