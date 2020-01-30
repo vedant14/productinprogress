@@ -1,10 +1,8 @@
-<div class="nav-scroller py-1 mb-2">
+<div class="nav-scroller py-3 mb-2 ">
   <nav class="nav d-flex justify-content-between">
-    <a class="p-2 text-muted" href="#">StartUp Struggles</a>
-    <a class="p-2 text-muted" href="#">New Products on Market</a>
-    <a class="p-2 text-muted" href="#">What am I building</a>
-    <a class="p-2 text-muted" href="#">Cool Articles to Follow</a>
-    <a class="p-2 text-muted" href="#">Culture things</a>
-    <a class="p-2 text-muted" href="#">Unsolicitated Opinion</a>
+  	<% @topics.each do |topic| %>
+  		<%= link_to topic.title, topic_path(topic), class: "text-muted" %>
+    <% end %>	
   </nav>
 </div>
+

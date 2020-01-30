@@ -1,0 +1,4 @@
+<%= render "shared/navbar" %>
+<% @topics.each do |topic| %>
+  <%= link_to topic.title, topic %>
+<% end %>     

@@ -1,0 +1,13 @@
+<% if current_user.present? %>
+  <div class="btn-group">
+    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary btn-sm" %>
+    <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
+	</div>
+	<span> 
+    <% if @post.status == 'draft' %> 
+    	<%= link_to 'Schedule for review', review_post_path(@post) ,class: "btn btn-warning  btn-sm" %>
+    <% elsif @post.status == 'review' %>
+    	<%= link_to 'Publish the post', publish_post_path(@post) ,class: "btn btn-success  btn-sm" %>
+    <% end%>	
+    </span>
+<% end %>

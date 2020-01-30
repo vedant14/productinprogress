@@ -1,0 +1,27 @@
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-10 blog-main">
+      <div class="pb-4 mb-4 font-italic border-bottom">
+        <span class="h3"> Recent Posts </span>
+        <%= link_to posts_path do %> 
+            Read all the articles <%= image_tag("/assets/next.svg") %> 
+        <% end %>  
+      </div>
+
+      <% @posts.each do |post| %>
+      <div class="blog-post">
+        <p class="blog-post-title"> <%= post.title %></p> 
+        <p class="blog-post-meta"> Published <%= distance_of_time_in_words(post.updated_at , Time.now) %> ago </p>
+        <p> <%= truncate(strip_tags(post.body.to_s), length: 200, separator: ' ') %> <%= link_to "continue reading", post%> </p>
+      </div>
+      <% end %>
+      <nav class="blog-pagination">
+        <%= link_to posts_path do %> 
+          <div class="btn btn-outline-secondary">            
+            Read all the articles <%= image_tag("/assets/next.svg") %> 
+          </div>
+        <% end %>
+    </div>    
+    <%= render "shared/blogsidebar" %>
+  </div>
+</main>
