@@ -8,6 +8,10 @@ class TopicsController < ApplicationController
   def show
     @topics = Topic.all
     @topic = Topic.find(params[:id])
-  	@posts = @topic.posts
+    if current_user.present?
+  	  @posts = @topic.posts.published_by_order
+    else
+      @posts = @topic.posts.published_by_order.published
+    end
   end
 end

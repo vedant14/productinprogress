@@ -1,6 +1,10 @@
 class StaticController < ApplicationController
   def home
-    @posts = Post.published_by_order.limit(3)
+  	if current_user.present?
+      @posts = Post.published_by_order.limit(3)
+    else
+      @posts = Post.published_by_order.published.limit(3)
+    end
     @topics = Topic.all
   end
 

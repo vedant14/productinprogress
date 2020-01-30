@@ -1,7 +1,7 @@
 <div class="nav-scroller py-3 mb-2 ">
   <nav class="nav d-flex justify-content-between">
   	<% @topics.each do |topic| %>
-  		<%= link_to topic.title, topic_path(topic) %>
+  		<%= link_to topic.title, topic_path(topic), class: "text-muted" %>
     <% end %>	
   </nav>
 </div>

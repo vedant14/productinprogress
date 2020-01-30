@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
- 	resources :posts
+ 	resources :posts do 
+	    member do 
+	      get :review
+	      get :publish
+	    end
+	end
 	resources :topics
 	devise_for :users, path: '', path_names: { sign_in: 'adminLogin'}, skip: [:registration] do
 	  get '/users/sign_out' => 'devise/sessions#destroy'

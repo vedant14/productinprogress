@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-10"> 
+    <div class="row">
+      <% @posts.each do |post| %>
+          <div class="col-sm-12 col-md-6 mb-5">
+            <div class="card border-0 shadow-soft h-100">
+              <div class="card-body p-5">
+                <div class="blog-index-title">
+                  <%= truncate(post.title, length:40, separator: ' ') %>
+                </div>
+                <p class="mb-0"> <%= truncate(strip_tags(post.body.to_s), length: 200, separator: ' ') %> </p>
+                <span class="blog-post-meta"> Published <%= distance_of_time_in_words(post.updated_at , Time.now) %> in <span class="topic_badge"> <%= link_to post.topic.title, topic_path(post.topic) %> </span></span>
+              </div>
+              <div class="card-footer bg-light border-0 py-4 px-5">
+                <% if current_user.present? %>
+                    <span class="badge badge-secondary">
+                    <% if post.status== 'draft' %> 
+                      Draft
+                    <% elsif post.status== 'review' %>
+                      Review Pending
+                    <% else %>
+                      Published
+                    <% end%>  
+                    </span>
+                <% end %>
+                <%= link_to post do %>
+                  Continue reading <%= image_tag("/assets/next.svg") %> 
+                <% end %>  
+              </div>
+            </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <%= render "shared/blogsidebar" %>
+</div>
+
+

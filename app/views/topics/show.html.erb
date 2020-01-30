@@ -1,5 +1,5 @@
-<% @posts.each do |post| %>
-	<%= post.title %>
-	<%= post.body %>
-	
-<% end %>			
+<%= render "shared/navbar" %>
+<div class="container my-5">
+	<h1 class="text-center"><%= @topic.title %> </h1>
+</div>
+<%= render "shared/blogcards" %>

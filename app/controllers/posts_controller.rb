@@ -1,22 +1,26 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :review, :publish]
+  access all: [:index, :show], user: :all
 
   # GET /posts
   def index
-    @posts = Post.published_by_order
+    if current_user.present?
+      @posts = Post.published_by_order
+    else
+      @posts = Post.published_by_order.published
+    end
     @topics = Topic.all
   end
 
   # GET /posts/1
   def show
     @topics = Topic.all
-
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @post.topic_id = 1 
   end
 
   # GET /posts/1/edit
@@ -49,6 +53,19 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
+
+  def review
+    @post.review!
+    redirect_to request.referrer 
+  end
+
+  def publish
+    @post.publish!
+    redirect_to request.referrer 
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -57,6 +74,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :body, :topic_id)
+      params.require(:post).permit(:title, :body, :status, :topic_id)
     end
 end
